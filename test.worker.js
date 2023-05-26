@@ -1,6 +1,7 @@
 // worker.js
 importScripts("https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js");
-ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/";
+// add below line to fix issue.
+//ort.env.wasm.wasmPaths = "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/";
 
 self.addEventListener("message", async (event) => {
   const session = await ort.InferenceSession.create('./model.onnx');
